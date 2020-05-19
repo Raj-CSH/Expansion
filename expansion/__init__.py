@@ -8,7 +8,7 @@
 # Imports from module expansion.py, so that functions and classes
 # can be accessed as expansion.name, rather than expansion.expansion.name.
 
-__version__ = '1.1'
+__version__ = '1.0'
 __author__ = 'Rajarshi Mandal'
 __all__ = ['ColoredPoint',
            'ColoredPointHandler',

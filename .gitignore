@@ -1,22 +1,20 @@
 # FOLDERS
 
-# Byte-compiled
+# Python-specific
 __pycache__/
 expansion/__pycache__/
-
-# Virtual environment
 env/
 
+# Building
+
+build/
+dist/
+expansion_raj_csh.egg-info/
+
 # Misc
-old/
-frames/
+misc/
 
 # FILES
 
 # Pylint RC
 .pylintrc
-
-# Misc
-commands.txt
-pylint_report.txt
-expansion_script.py
