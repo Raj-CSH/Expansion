@@ -1,0 +1,22 @@
+# FOLDERS
+
+# Byte-compiled
+__pycache__/
+expansion/__pycache__/
+
+# Virtual environment
+env/
+
+# Misc
+old/
+frames/
+
+# FILES
+
+# Pylint RC
+.pylintrc
+
+# Misc
+commands.txt
+pylint_report.txt
+expansion_script.py
