@@ -16,14 +16,17 @@ __all__ = ['Callback',
 
 import abc
 import sys
+from typing import Any, Callable, Optional, Tuple
 
 import pygame as pg
+
+from expansion import expansion
 
 
 class Callback(metaclass=abc.ABCMeta):
     """Abstract Base Class for all callbacks to derive from. """
     @abc.abstractmethod
-    def __call__(self, epoch, handler):
+    def __call__(self, epoch: int, handler: expansion.ColoredPointHandler) -> None:
         """Calls callback.
 
             Args:
@@ -42,16 +45,16 @@ class Sample(Callback):
                             given as 'png' or 'jpg'.
 
     """
-    def __init__(self, directory, f_format):
+    def __init__(self, directory: str, f_format: str) -> None:
         self.directory = directory
         self.f_format = f_format
 
-    def __call__(self, epoch, handler):
+    def __call__(self, epoch: int, handler: expansion.ColoredPointHandler) -> None:
         handler.export_as_img().save(f'{self.directory}/{epoch}.{self.f_format.lower()}')
 
 class Print(Callback):
     """Callback to print the current epoch number and point count."""
-    def __call__(self, epoch, handler):
+    def __call__(self, epoch: int, handler: expansion.ColoredPointHandler) -> None:
         print(f'Epoch:  {epoch}, Point Count:    {len(handler.points)}')
 
 class PygameGUI(Callback):
@@ -61,13 +64,14 @@ class PygameGUI(Callback):
 
         Args:
             length (int): Side length of square ColoredPointHandler.arr.
-            dimensions (iterable)(int): Dimensions of pygame window.
-            offset (iterable)(int): Offset of ColoredPointHandler.arr
-                                    on pygame window, given as (x, y).
-                                    Defaults to no offset (0, 0).
+            dimensions (tuple)(int): Dimensions of pygame window.
+            offset (tuple)(int): Offset of ColoredPointHandler.arr
+                                 on pygame window, given as (x, y).
+                                 Defaults to no offset (0, 0).
             tick (int): Tick to be passed to pygame.time.Clock.tick()
     """
-    def __init__(self, length, dimensions, offset=(0, 0), tick=60):
+    def __init__(self, length: int, dimensions: Tuple[int, int],
+                 offset: Tuple[int, int] = (0, 0), tick: int = 60) -> None:
         self.offset = offset
         self.tick = tick
         self.window = pg.display.set_mode(dimensions)
@@ -76,7 +80,7 @@ class PygameGUI(Callback):
 
         pg.display.set_caption('Expansion')
 
-    def __call__(self, epoch, handler):
+    def __call__(self, epoch: int, handler: expansion.ColoredPointHandler) -> None:
         arr = handler.export_as_arr()
 
         pg.surfarray.blit_array(self.surface, arr)
@@ -94,32 +98,33 @@ class _FunctionCallback(Callback):
     """Callback from a function.
 
         Args:
-            function (function): Function to instantiate a callback from,
-                                 Must have epoch and handler as positional arguments,
-                                 then keyword arguments that are fixed, before callback
-                                 is called.
+            func (callable): Function to instantiate a callback from,
+                             Must have epoch and handler as positional arguments,
+                             then keyword arguments that are fixed, before callback
+                             is called.
             **kwargs: Keyword arguments to be passed to the function before simulation.
     """
-    def __init__(self, function, **kwargs):
-        self._func = function
+    def __init__(self, func: Callable[[Any], None], **kwargs: Optional[Any]) -> None:
+        self._func = func
         self.__dict__.update(**kwargs)
 
-    def __call__(self, epoch, handler):
+    def __call__(self, epoch: int, handler: expansion.ColoredPointHandler) -> None:
         func = self._func
-        del self.__dict__['_func']
+        del self._func
         func(epoch, handler, **self.__dict__)
-        self.__dict__['_func'] = func
+        self._func = func
 
 
-def callback_from_function(function, **kwargs):
+def callback_from_function(func: Callable[[Any], None],
+                           **kwargs: Optional[Any]) -> _FunctionCallback:
     """Instantiates a callback object from a function.
         Thin wrapper around expansion.callbacks._FunctionCallback.
 
         Args:
-            function (function): Function to instantiate a callback from,
-                                 Must have epoch and handler as positional arguments,
-                                 then keyword arguments that are fixed, before callback
-                                 is called.
+            func (callable): Function to instantiate a callback from,
+                             Must have epoch and handler as positional arguments,
+                             then keyword arguments that are fixed, before callback
+                             is called.
             **kwargs: Keyword arguments to be passed to the function before simulation.
 
         Returns:
@@ -127,4 +132,4 @@ def callback_from_function(function, **kwargs):
                                                      positional arguments,
                                                      'epoch' then 'handler'.
     """
-    return _FunctionCallback(function, **kwargs)
+    return _FunctionCallback(func, **kwargs)

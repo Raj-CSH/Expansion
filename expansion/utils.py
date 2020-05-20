@@ -10,6 +10,7 @@ __all__ = ['Timer',
 
 import os
 import time
+from typing import Any, Callable, Optional, Tuple
 
 import cv2
 
@@ -18,10 +19,10 @@ class Timer:
     """Once instantiated, can be called to time a function.
 
         Args:
-            func (function): Function to be timed.
+            func (callable): Function to be timed.
             print_time (bool): If set to True, the time elapsed will be printed to sys.stdout.
     """
-    def __init__(self, func, print_time=False):
+    def __init__(self, func: Callable[[Any], Any], print_time: bool = False) -> None:
         self.func = func
         self.print_time = print_time
 
@@ -29,7 +30,7 @@ class Timer:
         self._timed = False
 
     @property
-    def result(self):
+    def result(self) -> Optional[Any]:
         """Result of function passed to Timer,
             only accesible once Timer instance
             has been called.
@@ -42,7 +43,7 @@ class Timer:
 
         raise AttributeError('Expansion: Timer.result has not been evaluated yet!')
 
-    def __call__(self, *args, **kwargs):
+    def __call__(self, *args: Optional[Any], **kwargs: Optional[Any]) -> float:
         """Times a function with an arbitrary number of arguments.
 
             Args:
@@ -66,7 +67,7 @@ class Timer:
 
         return time_elapsed
 
-def stitch(directory, name, fps, dim, f_format):
+def stitch(directory: str, name: str, fps: int, dim: Tuple[int, int], f_format: str) -> None:
     """Generates a video in '.avi' or '.mp4' format.
         Uses frames in a directory generated
         by the expansion.callbacks.Sample() callback
@@ -78,8 +79,8 @@ def stitch(directory, name, fps, dim, f_format):
             directory (str): Directory of the frames.
             name (str): Desired name of the video.
             fps (int): Desired frame rate of the video.
-            dim (iterable)(int): An iterable consisting of two integers,
-                                 representing the dimensions of each frame.
+            dim (tuple)(int): A tuple consisting of two integers,
+                              representing the dimensions of each frame.
             f_format (str): Desired file format of the video, either 'avi' or 'mp4'.
     """
     # pylint: disable=no-member

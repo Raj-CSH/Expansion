@@ -14,8 +14,9 @@ __all__ = ['ColoredPoint',
 
 import multiprocessing
 import os
-from PIL import Image
+from typing import Iterable, List, Optional, Tuple
 
+from PIL import Image
 import numpy as np
 
 from expansion import callbacks as cb
@@ -40,10 +41,10 @@ class ColoredPoint:
 
         Args:
             length (int): Side length of square numpy array of which this point belongs to.
-            coords (iterable)(int): An iterable of integers, consisting of x, y
-                                    coordinates in the range(0, length).
-            rgb (iterable)(float): An iterable of 3 floats scaled between 0 and 1 to
-                                   represent the RGB color value of the point.
+            coords (tuple)(int): A tuple of integers, consisting of x, y
+                                 coordinates in the range(0, length).
+            rgb (tuple)(float): A tuple of 3 floats scaled between 0 and 1 to
+                                represent the RGB color value of the point.
             color_instruction (expansion.colors.ColorInstruction): Instance of a subclass of
                                                                    expansion.colors.ColorInstruction
                                                                    that defines methods to determine
@@ -58,7 +59,9 @@ class ColoredPoint:
     """
     __slots__ = ['_length', '_color_instruction', '_environment_sensitive', '_coords', '_rgb']
 
-    def __init__(self, length, coords, rgb, color_instruction, environment_sensitive=False): # pylint: disable=too-many-arguments
+    def __init__(self, length: int, coords: Tuple[int, int], rgb: Tuple[float, float, float], # pylint: disable=too-many-arguments
+                 color_instruction: colors.ColorInstruction, # pylint: disable=too-many-arguments
+                 environment_sensitive: bool = False) -> None: # pylint: disable=too-many-arguments
 
         if not isinstance(length, int):
             raise ValueError('Expansion: ColoredPoint.length must be an integer!')
@@ -79,50 +82,50 @@ class ColoredPoint:
         self._length = length
         self._color_instruction = color_instruction
         self._environment_sensitive = environment_sensitive
-        self._coords = tuple(coords)  # Store in a tuple to prevent mutability.
-        self._rgb = tuple(rgb) # Store in a tuple to prevent mutability.
+        self._coords = coords
+        self._rgb = rgb
 
     @property
-    def length(self):
+    def length(self) -> int:
         """(int): Side length of square numpy array of which this point belongs to."""
         return self._length
 
     @property
-    def color_instruction(self):
+    def color_instruction(self) -> colors.ColorInstruction:
         """(expansion.colors.ColorInstruction): Color instruction of point."""
         return self._color_instruction
 
     @property
-    def environment_sensitive(self):
+    def environment_sensitive(self) -> bool:
         """(bool): Selects reproduction method for point."""
         return self._environment_sensitive
 
     @property
-    def x(self):
+    def x(self) -> int:
         """(int): X coordinate of point in range(0, ColoredPoint.length)."""
         return self._coords[0]
 
     @property
-    def y(self):
+    def y(self) -> int:
         """(int): Y coordinate of point in range(0, ColoredPoint.length)."""
         return self._coords[1]
 
     @property
-    def r(self):
-        """(int): Red channel (RGB) of color of point scaled between 0 and 1."""
+    def r(self) -> float:
+        """(float): Red channel (RGB) of color of point scaled between 0 and 1."""
         return self._rgb[0]
 
     @property
-    def g(self):
-        """(int): Green channel (RGB) of color of point scaled between 0 and 1."""
+    def g(self) -> float:
+        """(float): Green channel (RGB) of color of point scaled between 0 and 1."""
         return self._rgb[1]
 
     @property
-    def b(self):
-        """(int): Blue channel (RGB) of color of point scaled between 0 and 1."""
+    def b(self) -> float:
+        """(float): Blue channel (RGB) of color of point scaled between 0 and 1."""
         return self._rgb[2]
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """Representation of ColoredPoint instances.
 
             Returns:
@@ -132,7 +135,7 @@ class ColoredPoint:
                 f'color_instruction={self.color_instruction}, length={self.length}, '
                 f'environment_sensitive={self.environment_sensitive})')
 
-    def __eq__(self, value):
+    def __eq__(self, value) -> bool:
         """Checks value equality based on underlying coordinates tuple,
             if both values compared are of type ColoredPoint,
             otherwise returns False.
@@ -146,7 +149,7 @@ class ColoredPoint:
         """
         return self._coords == value._coords if isinstance(value, ColoredPoint) else False
 
-    def __hash__(self):
+    def __hash__(self) -> int:
         """Returns hash of underlying coordinates tuple,
             as ColoredPoint instances are unhashable.
             Implemented for use in sets.
@@ -157,7 +160,7 @@ class ColoredPoint:
         """
         return hash(self._coords)
 
-    def reproduce(self, arr=None):
+    def reproduce(self, arr: Optional[np.ndarray] = None) -> List[ColoredPoint]:
         """Reproduces point with altered color and position
             by generating new instances of ColoredPoint.
             Checks to see whether 4 immediate directions of point are within bounds,
@@ -174,12 +177,13 @@ class ColoredPoint:
                                      when environment_sensitive is True.
 
             Returns:
-                (list): A list of the new ColoredPoint instances that have met the criteria.
+                (list)(expansion.ColoredPoint): A list of the new ColoredPoint
+                                                instances that have met the criteria.
         """
         return (_reproduce_environment_sensitive(self, arr) if self.environment_sensitive
                 else _reproduce_environment_insensitive(self))
 
-    def render(self, arr):
+    def render(self, arr: np.ndarray) -> np.ndarray:
         """Draws point to specified array.
 
             Args:
@@ -204,7 +208,8 @@ class ColoredPointHandler:
     """
     __slots__ = ['_length', '_arr', '_points', '_environment_sensitive']
 
-    def __init__(self, length, initial_points, initial_image=None):
+    def __init__(self, length: int, initial_points: Iterable[ColoredPoint],
+                 initial_image: Optional[np.ndarray] = None) -> None:
         self._length = length
 
         if initial_image is not None:
@@ -216,19 +221,19 @@ class ColoredPointHandler:
         self._environment_sensitive = self.points[0].environment_sensitive
 
     @property
-    def length(self):
+    def length(self) -> int:
         """(int): Side length of square numpy array, which handler renders to. Read-only."""
         return self._length
 
     @property
-    def arr(self):
+    def arr(self) -> np.ndarray:
         """(numpy.ndarray): Image, for handler to render to, in the form of a numpy array
                             with 3 ndimensions, and float values scaled between 0 and 1.
         """
         return self._arr
 
     @arr.setter
-    def arr(self, value):
+    def arr(self, value: np.ndarray) -> None:
         """(numpy.ndarray): Image, for handler to render to, in the form of a numpy array
                             with 3 ndimensions, and float values scaled between 0 and 1.
 
@@ -243,12 +248,12 @@ class ColoredPointHandler:
                              'and an instance of numpy.ndarray!')
 
     @property
-    def points(self):
+    def points(self) -> List[ColoredPoint]:
         """(list)(expansion.ColoredPoint): Points for handler to use."""
         return self._points
 
     @points.setter
-    def points(self, value):
+    def points(self, value: List[ColoredPoint]) -> None:
         """(list)(expansion.ColoredPoint): Points for handler to use.
 
             Raises:
@@ -268,12 +273,12 @@ class ColoredPointHandler:
                              'must be a non-empty list!')
 
     @property
-    def environment_sensitive(self):
+    def environment_sensitive(self) -> bool:
         """(bool): Boolean value to select points' reproduction method."""
         return self._environment_sensitive
 
     @environment_sensitive.setter
-    def environment_sensitive(self, value):
+    def environment_sensitive(self, value: bool) -> None:
         """(bool): Boolean value to select points' reproduction method."""
         if isinstance(value, bool):
             self._environment_sensitive = value
@@ -283,7 +288,7 @@ class ColoredPointHandler:
             raise ValueError(f'Expansion: value {value} to set ColoredPointHandler.'
                              'environment_sensitive must be of type bool!')
 
-    def reproduce_points(self):
+    def reproduce_points(self) -> None:
         """Reproduces points and updates internal list."""
         pool = _pool()
 
@@ -308,15 +313,20 @@ class ColoredPointHandler:
 
         self.points.extend(new_points)
 
-    def kill_competitors(self):
-        """Deletes points which have positions that have already been occupied."""
+    def kill_competitors(self) -> None:
+        """Deletes points which have positions that have already been occupied.
+
+            Raises:
+                AssertionError: If ColoredHandler.points becomes greater than
+                                its allocated length (= ColoredHandler.length ** 2).
+        """
         self.points = list(set(self.points))
 
         assert len(self.points) <= (self.length ** 2), ('Expansion: ColoredPointHandler.points'
                                                         'is greater than allocated length'
                                                         f'({len(self.points)} > {self.length**2})!')
 
-    def render_points(self):
+    def render_points(self) -> None:
         """Renders points to internal array,
             which can be exported via the
             export_as_img() or export_as_arr(),
@@ -329,7 +339,7 @@ class ColoredPointHandler:
 
         self.arr = arr
 
-    def run_callbacks(self, callbacks, epoch):
+    def run_callbacks(self, callbacks: Iterable[cb.Callback], epoch: int) -> None:
         """Executes callbacks on points given an epoch number.
 
             Args:
@@ -338,18 +348,11 @@ class ColoredPointHandler:
         """
         if callbacks is not None:
             for callback in callbacks:
-                if isinstance(callback, cb.Callback):
-                    callback(epoch, self)
-                else:
-                    raise ValueError(f'Expansion: callback {callback} passed to '
-                                     'ColoredPointHandler.simulate '
-                                     'must be of type expansion.callbacks.Callback! '
-                                     'Functions can be converted into callback objects '
-                                     'via the use of expansion.callbacks.'
-                                     'callback_from_function')
+                callback(epoch, self)
 
 
-    def simulate(self, epochs=0, callbacks=None, close_pool_on_end=True):
+    def simulate(self, epochs: int = 0, callbacks: Optional[Iterable[cb.Callback]] = None,
+                 close_pool_on_end: bool = True) -> None:
         """Reproduces points, then kills competitors, then renders points, then runs callbacks,
             for a given number of epochs or until image is wholly colored.
 
@@ -400,7 +403,7 @@ class ColoredPointHandler:
 
         print('Expansion: finished successfully!')
 
-    def export_as_arr(self):
+    def export_as_arr(self) -> np.ndarray:
         """Exports internal array as a numpy array
             with datatype as unsigned 8-bit integers.
 
@@ -411,7 +414,7 @@ class ColoredPointHandler:
         """
         return (self.arr * 255.).astype(np.uint8)
 
-    def export_as_img(self):
+    def export_as_img(self) -> Image.Image:
         """Exports internal array as a RGB PIL image.
 
             Returns:
@@ -420,7 +423,7 @@ class ColoredPointHandler:
         return Image.fromarray(self.export_as_arr())
 
 
-def is_multiprocessing():
+def is_multiprocessing() -> bool:
     """Checks if multiprocessing is enabled.
 
         Returns:
@@ -428,7 +431,7 @@ def is_multiprocessing():
     """
     return _M[0]
 
-def disable_multiprocessing():
+def disable_multiprocessing() -> None:
     """Disables multiprocessing."""
     global _M # pylint: disable=global-statement
     print('Expansion: multiprocessing disabled!\n')
@@ -436,7 +439,7 @@ def disable_multiprocessing():
     _M[0] = False
     _M[1] = None
 
-def enable_multiprocessing(cores_to_use=os.cpu_count()):
+def enable_multiprocessing(cores_to_use: int = os.cpu_count()) -> None:
     """Enables multiprocessing.
 
         Args:
@@ -451,7 +454,7 @@ def enable_multiprocessing(cores_to_use=os.cpu_count()):
     _M[1] = multiprocessing.Pool(cores_to_use)
     _M[2] = cores_to_use
 
-def core_count():
+def core_count() -> int:
     """Retrieve the number of cores utilised by multiprocessing.
 
         Returns:
@@ -459,12 +462,12 @@ def core_count():
     """
     return _M[2]
 
-def _pool():
+def _pool() -> multiprocessing.pool.Pool:
     """Retrieve pool utilised by multiprocessing. If pool is None,
         instantiates a new multiprocessing.Pool with set core count.
 
         Returns:
-            (multiprocessing.Pool): Pool utilised by multiprocessing.
+            (multiprocessing.pool.Pool): Pool utilised by multiprocessing.
     """
     global _M # pylint: disable=global-statement
 
@@ -473,7 +476,7 @@ def _pool():
 
     return _M[1]
 
-def _reproduce_environment_sensitive(point, arr):
+def _reproduce_environment_sensitive(point: ColoredPoint, arr: np.ndarray)-> List[ColoredPoint]:
     """Reproduces point with altered color and position
         by generating new instances of ColoredPoint.
         Checks to see whether 4 immediate directions of point are within bounds,
@@ -538,7 +541,7 @@ def _reproduce_environment_sensitive(point, arr):
 
     return children
 
-def _reproduce_environment_insensitive(point):
+def _reproduce_environment_insensitive(point: ColoredPoint) -> List[ColoredPoint]:
     """Reproduces point with altered color and position
         by generating new instances of ColoredPoint.
         Checks to see whether 4 immediate directions of point are within bounds,
