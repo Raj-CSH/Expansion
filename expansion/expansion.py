@@ -350,7 +350,6 @@ class ColoredPointHandler:
             for callback in callbacks:
                 callback(epoch, self)
 
-
     def simulate(self, epochs: int = 0, callbacks: Optional[Iterable[cb.Callback]] = None,
                  close_pool_on_end: bool = True) -> None:
         """Reproduces points, then kills competitors, then renders points, then runs callbacks,

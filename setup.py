@@ -13,7 +13,7 @@ setuptools.setup(
     description='A simple generative art project.',
     long_description=README,
     long_description_content_type='text/markdown',
-    url='https://github.com/Raj-CSH/Expansion',
+    url='https://github.com/Raj-CSH/expansion',
     packages=setuptools.find_packages(),
     classifiers=['Programming Language :: Python :: 3',
                  'License :: OSI Approved :: MIT License',
