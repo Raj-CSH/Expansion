@@ -65,7 +65,13 @@ If that fails, it most likely means that pip is not installed on your system.
 
 To install pip, follow the guide on the [Python Packaging Authority (PyPA)](https://pip.pypa.io/en/stable/installing/) website.
 
-3. (Optional)(Recommended) Create a virtual environment via venv.
+3. Update setuptools.
+
+Run the command `$ pip install --upgrade setuptools` to update setuptools.
+If this fails, you might have to prefix the command with `python3 -m` on MacOS/Linux,
+or `python -m` on Windows. If that fails, try changing `pip` to `pip3`.
+
+4. (Optional)(Recommended) Create a virtual environment via venv.
 
 Navigate to your desired directory, by running `$ cd <DIRECTORY>` on the command line.
 Then create the virtual environment with the `$ python3 -m venv <ENVIRONMENT_NAME>` or
@@ -74,7 +80,7 @@ This can be activated with the `$ source <ENVIRONMENT_NAME>/bin/activate` comman
 or the `<ENVIRONMENT_NAME>\Scripts\activate.bat` command on Windows. It can then be deactivated
 via the `$ deactivate` command.
 
-4. Clone the git repository.
+5. Clone the git repository.
 
 This can be done via the `git clone https://github.com/Raj-CSH/Expansion.git` command,
 if git is installed on your system. This can be checked via the `$ git --version` command.
@@ -83,19 +89,19 @@ If that fails, it most likely means git is not installed on your system.
 
 To install git, follow the guide on the [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) website.
 
-5. Install the dependencies via pip.
+6. Install the dependencies via pip.
 
 First, activate your virtual environment as shown above.
 Then, run the command `$ cd Expansion` to navigate to the repository directory.
 Finally, run the command `$ pip install -r requirements.txt` to install the dependencies.
 
-6. Build via setuptools.
+7. Build via setuptools.
 
 In the same directory as `setup.py`, run the `$ python3 setup.py sdist bdist_wheel` or  the `$ python setup.py sdist bdist_wheel`
 commands, depending on your OS. This will generate a 'dist' folder, containing the '.whl' file that can be installed via pip.
 
 
-7. Install the wheel.
+8. Install the wheel.
 
 Navigate into the dist folder via the command `$ cd dist`. Then run `$ pip install expansion_raj_csh-<VERSION_NUMBER>-py3-none-any.whl`,
 where `<VERSION_NUMBER>` is the version of the expansion package. This can be checked by looking at the version number in the filename of the wheel.
