@@ -7,7 +7,7 @@ with open('README.md', 'r') as read_me:
 
 setuptools.setup(
     name='expansion-raj-csh',
-    version='1.0.1',
+    version='1.0.1.1',
     author='Rajarshi Mandal',
     author_email='rajarshimandal22@gmail.com',
     description='A simple generative art project.',
