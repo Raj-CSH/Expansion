@@ -1,5 +1,8 @@
 # Expansion
 
+![Full Example](examples/500x500_single_point_full.png)
+![Full Example 2](examples/500x500_random_single_point_full.png)
+
 What started out as a simple generative art project and experiment, built off of numpy, 
 has now become an API, specifically pertaining to a point(s) reproducing in an image, 
 with changing colors, and even environment-sensitive reproduction, with obstacles.
@@ -10,6 +13,10 @@ Use the command `$ pip install expansion-raj-csh` to install.
 If this fails, you might have to prefix the command with `python3 -m` on MacOS/Linux,
 or `python -m` on Windows. If that fails, try changing `pip` to `pip3`,
 or use the `--user` argument just before `-r`.
+
+### Examples
+
+See the [examples](examples/) directory to see some examples, as well as an example script.
 
 ### Prerequisites
 
