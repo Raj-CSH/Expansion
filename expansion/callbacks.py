@@ -16,17 +16,18 @@ __all__ = ['Callback',
 
 import abc
 import sys
-from typing import Any, Callable, Optional, Tuple
+from typing import Any, Callable, Optional, Tuple, TYPE_CHECKING
 
 import pygame as pg
 
-from expansion import expansion
+if TYPE_CHECKING:
+    from expansion import expansion
 
 
 class Callback(metaclass=abc.ABCMeta):
     """Abstract Base Class for all callbacks to derive from. """
     @abc.abstractmethod
-    def __call__(self, epoch: int, handler: expansion.ColoredPointHandler) -> None:
+    def __call__(self, epoch: int, handler: 'expansion.ColoredPointHandler') -> None:
         """Calls callback.
 
             Args:
@@ -49,12 +50,12 @@ class Sample(Callback):
         self.directory = directory
         self.f_format = f_format
 
-    def __call__(self, epoch: int, handler: expansion.ColoredPointHandler) -> None:
+    def __call__(self, epoch: int, handler: 'expansion.ColoredPointHandler') -> None:
         handler.export_as_img().save(f'{self.directory}/{epoch}.{self.f_format.lower()}')
 
 class Print(Callback):
     """Callback to print the current epoch number and point count."""
-    def __call__(self, epoch: int, handler: expansion.ColoredPointHandler) -> None:
+    def __call__(self, epoch: int, handler: 'expansion.ColoredPointHandler') -> None:
         print(f'Epoch:  {epoch}, Point Count:    {len(handler.points)}')
 
 class PygameGUI(Callback):
@@ -80,7 +81,7 @@ class PygameGUI(Callback):
 
         pg.display.set_caption('Expansion')
 
-    def __call__(self, epoch: int, handler: expansion.ColoredPointHandler) -> None:
+    def __call__(self, epoch: int, handler: 'expansion.ColoredPointHandler') -> None:
         arr = handler.export_as_arr()
 
         pg.surfarray.blit_array(self.surface, arr)
@@ -108,7 +109,7 @@ class _FunctionCallback(Callback):
         self._func = func
         self.__dict__.update(**kwargs)
 
-    def __call__(self, epoch: int, handler: expansion.ColoredPointHandler) -> None:
+    def __call__(self, epoch: int, handler: 'expansion.ColoredPointHandler') -> None:
         func = self._func
         del self._func
         func(epoch, handler, **self.__dict__)

@@ -14,13 +14,14 @@ __all__ = ['ColoredPoint',
 
 import multiprocessing
 import os
-from typing import Iterable, List, Optional, Tuple
+from typing import Iterable, List, Optional, Tuple, TYPE_CHECKING
 
 from PIL import Image
 import numpy as np
 
-from expansion import callbacks as cb
-from expansion import colors
+if TYPE_CHECKING:
+    from expansion import callbacks as cb
+    from expansion import colors
 
 _M = [False, None, 1]
 
@@ -51,33 +52,12 @@ class ColoredPoint:
                                                                    color of reproduced point.
             environment_sensitive (bool): Boolean value, defaults to False,
                                           if True selects environment sensitive reproduce method.
-
-        Raises:
-            ValueError: If length is not of type int.
-                        If color_instruction is not of type expansion.colors.ColorInstruction.
-                        If environment_sensitive is not of type bool.
     """
     __slots__ = ['_length', '_color_instruction', '_environment_sensitive', '_coords', '_rgb']
 
     def __init__(self, length: int, coords: Tuple[int, int], rgb: Tuple[float, float, float], # pylint: disable=too-many-arguments
-                 color_instruction: colors.ColorInstruction, # pylint: disable=too-many-arguments
-                 environment_sensitive: bool = False) -> None: # pylint: disable=too-many-arguments
-
-        if not isinstance(length, int):
-            raise ValueError('Expansion: ColoredPoint.length must be an integer!')
-
-        if not isinstance(color_instruction, colors.ColorInstruction):
-            raise ValueError('Expansion: ColoredPoint.color_instuction must be an '
-                             'instance of a subclass of expansion.colors.ColorInstruction!')
-
-        if not isinstance(environment_sensitive, bool):
-            raise ValueError('Expansion: ColoredPoint.environment_sensitive must be a boolean!')
-
-        if not len(coords) == 2:
-            raise ValueError('Expansion: ColoredPoint.coords must be x, y coordinates!')
-
-        if not len(rgb) == 3:
-            raise ValueError('Expansion: ColoredPoint.rgb must be an r, g, b value!')
+                 color_instruction: 'colors.ColorInstruction',
+                 environment_sensitive: bool = False) -> None:
 
         self._length = length
         self._color_instruction = color_instruction
@@ -91,7 +71,7 @@ class ColoredPoint:
         return self._length
 
     @property
-    def color_instruction(self) -> colors.ColorInstruction:
+    def color_instruction(self) -> 'colors.ColorInstruction':
         """(expansion.colors.ColorInstruction): Color instruction of point."""
         return self._color_instruction
 
@@ -240,12 +220,11 @@ class ColoredPointHandler:
             Raises:
                 ValueError: If array given is of a different shape to original array.
         """
-        if (isinstance(value, np.ndarray)) and (value.shape == self.arr.shape):
+        if value.shape == self.arr.shape:
             self._arr = value
         else:
             raise ValueError('Expansion: value to set ColoredPointHandler.arr '
-                             f'must be of same shape {self.arr.shape} '
-                             'and an instance of numpy.ndarray!')
+                             f'must be of same shape {self.arr.shape}')
 
     @property
     def points(self) -> List[ColoredPoint]:
@@ -257,17 +236,10 @@ class ColoredPointHandler:
         """(list)(expansion.ColoredPoint): Points for handler to use.
 
             Raises:
-                ValueError: If list passed is empty or a value in list
-                            is not of type expansion.ColoredPoint.
+                ValueError: If list passed is empty.
         """
-        if (isinstance(value, list)) and (len(value) > 0):
-            is_cp = [isinstance(elem, ColoredPoint) for elem in value]
-
-            if all(is_cp):
-                self._points = value
-            else:
-                raise ValueError(f'Expansion: value {value} to set ColoredPointHandler.points'
-                                 'must have all elements of type expansion.ColoredPoint!')
+        if len(value) > 0:
+            self._points = value
         else:
             raise ValueError(f'Expansion: value {value} to set ColoredPointHandler.points'
                              'must be a non-empty list!')
@@ -280,13 +252,9 @@ class ColoredPointHandler:
     @environment_sensitive.setter
     def environment_sensitive(self, value: bool) -> None:
         """(bool): Boolean value to select points' reproduction method."""
-        if isinstance(value, bool):
-            self._environment_sensitive = value
-            for point in self.points:
-                point._environment_sensitive = self.environment_sensitive # pylint: disable=protected-access
-        else:
-            raise ValueError(f'Expansion: value {value} to set ColoredPointHandler.'
-                             'environment_sensitive must be of type bool!')
+        self._environment_sensitive = value
+        for point in self.points:
+            point._environment_sensitive = self.environment_sensitive # pylint: disable=protected-access
 
     def reproduce_points(self) -> None:
         """Reproduces points and updates internal list."""
@@ -339,7 +307,7 @@ class ColoredPointHandler:
 
         self.arr = arr
 
-    def run_callbacks(self, callbacks: Iterable[cb.Callback], epoch: int) -> None:
+    def run_callbacks(self, callbacks: Optional[Iterable['cb.Callback']], epoch: int) -> None:
         """Executes callbacks on points given an epoch number.
 
             Args:
@@ -350,7 +318,7 @@ class ColoredPointHandler:
             for callback in callbacks:
                 callback(epoch, self)
 
-    def simulate(self, epochs: int = 0, callbacks: Optional[Iterable[cb.Callback]] = None,
+    def simulate(self, epochs: int = 0, callbacks: Optional[Iterable['cb.Callback']] = None,
                  close_pool_on_end: bool = True) -> None:
         """Reproduces points, then kills competitors, then renders points, then runs callbacks,
             for a given number of epochs or until image is wholly colored.

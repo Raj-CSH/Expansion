@@ -12,9 +12,10 @@ __all__ = ['ColorInstruction',
            'ColorB']
 
 import abc
-from typing import Any, Optional, Tuple
+from typing import Any, Optional, Tuple, TYPE_CHECKING
 
-from expansion import expansion
+if TYPE_CHECKING:
+    from expansion import expansion
 
 
 class ColorInstruction(metaclass=abc.ABCMeta):
@@ -22,7 +23,7 @@ class ColorInstruction(metaclass=abc.ABCMeta):
     def __init__(self, *args: Optional[Any], **kwargs: Optional[Any]) -> None:
         pass
 
-    def __call__(self, point: expansion.ColoredPoint,
+    def __call__(self, point: 'expansion.ColoredPoint',
                  coords_diff: Tuple[int, int]) -> Tuple[float, float, float]:
         """Executes color instruction to obtain color.
             Not to be overriden by derived classes.
@@ -46,7 +47,7 @@ class ColorInstruction(metaclass=abc.ABCMeta):
         return color
 
     @abc.abstractmethod
-    def x_increasing(self, point: expansion.ColoredPoint) -> Tuple[float, float, float]:
+    def x_increasing(self, point: 'expansion.ColoredPoint') -> Tuple[float, float, float]:
         """Called when coords_diff == (1, 0),
             i.e. when x is increasing, but y is constant.
 
@@ -58,7 +59,7 @@ class ColorInstruction(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
-    def y_increasing(self, point: expansion.ColoredPoint) -> Tuple[float, float, float]:
+    def y_increasing(self, point: 'expansion.ColoredPoint') -> Tuple[float, float, float]:
         """Called when coords_diff == (0, 1),
             i.e. when y is increasing, but x is constant.
 
@@ -70,7 +71,7 @@ class ColorInstruction(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
-    def x_decreasing(self, point: expansion.ColoredPoint) -> Tuple[float, float, float]:
+    def x_decreasing(self, point: 'expansion.ColoredPoint') -> Tuple[float, float, float]:
         """Called when coords_diff == (-1, 0),
             i.e. when x is decreasing, but y is constant.
 
@@ -82,7 +83,7 @@ class ColorInstruction(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
-    def y_decreasing(self, point: expansion.ColoredPoint) -> Tuple[float, float, float]:
+    def y_decreasing(self, point: 'expansion.ColoredPoint') -> Tuple[float, float, float]:
         """Called when coords_diff == (0, -1),
             i.e. when y is decreasing, but x is constant.
 
@@ -95,28 +96,28 @@ class ColorInstruction(metaclass=abc.ABCMeta):
 
 class ColorA(ColorInstruction):
     """A builtin expansion color instruction, descriptively named 'A'."""
-    def x_increasing(self, point: expansion.ColoredPoint) -> Tuple[float, float, float]:
+    def x_increasing(self, point: 'expansion.ColoredPoint') -> Tuple[float, float, float]:
         return (point.r+(1/point.length), point.g+(1/point.length), point.b-(1/point.length))
 
-    def y_increasing(self, point: expansion.ColoredPoint) -> Tuple[float, float, float]:
+    def y_increasing(self, point: 'expansion.ColoredPoint') -> Tuple[float, float, float]:
         return (point.r-(1/point.length), point.g+(1/point.length), point.b+(1/point.length))
 
-    def x_decreasing(self, point: expansion.ColoredPoint) -> Tuple[float, float, float]:
+    def x_decreasing(self, point: 'expansion.ColoredPoint') -> Tuple[float, float, float]:
         return (point.r-(1/point.length), point.g-(1/point.length), point.b+(1/point.length))
 
-    def y_decreasing(self, point: expansion.ColoredPoint) -> Tuple[float, float, float]:
+    def y_decreasing(self, point: 'expansion.ColoredPoint') -> Tuple[float, float, float]:
         return (point.r+(1/point.length), point.g-(1/point.length), point.b-(1/point.length))
 
 class ColorB(ColorInstruction):
     """A builtin expansion color instruction, descriptively named 'B'."""
-    def x_increasing(self, point: expansion.ColoredPoint) -> Tuple[float, float, float]:
+    def x_increasing(self, point: 'expansion.ColoredPoint') -> Tuple[float, float, float]:
         return (point.r+(1/point.length), point.g+(1/point.length), point.b-(1/point.length))
 
-    def y_increasing(self, point: expansion.ColoredPoint) -> Tuple[float, float, float]:
+    def y_increasing(self, point: 'expansion.ColoredPoint') -> Tuple[float, float, float]:
         return (point.r-(1/point.length), point.g+(1/point.length), point.b-(1/point.length))
 
-    def x_decreasing(self, point: expansion.ColoredPoint) -> Tuple[float, float, float]:
+    def x_decreasing(self, point: 'expansion.ColoredPoint') -> Tuple[float, float, float]:
         return (point.r-(1/point.length), point.g-(1/point.length), point.b+(1/point.length))
 
-    def y_decreasing(self, point: expansion.ColoredPoint) -> Tuple[float, float, float]:
+    def y_decreasing(self, point: 'expansion.ColoredPoint') -> Tuple[float, float, float]:
         return (point.r+(1/point.length), point.g-(1/point.length), point.b-(1/point.length))
