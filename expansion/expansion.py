@@ -3,6 +3,9 @@
     Classes and methods imported into namespace as
     expansion.name rather than expansion.expansion.name.
 """
+
+from __future__ import annotations
+
 __version__ = '1.0'
 __author__ = 'Rajarshi Mandal'
 __all__ = ['ColoredPoint',
@@ -56,7 +59,7 @@ class ColoredPoint:
     __slots__ = ['_length', '_color_instruction', '_environment_sensitive', '_coords', '_rgb']
 
     def __init__(self, length: int, coords: Tuple[int, int], rgb: Tuple[float, float, float], # pylint: disable=too-many-arguments
-                 color_instruction: 'colors.ColorInstruction',
+                 color_instruction: colors.ColorInstruction,
                  environment_sensitive: bool = False) -> None:
 
         self._length = length
@@ -307,7 +310,7 @@ class ColoredPointHandler:
 
         self.arr = arr
 
-    def run_callbacks(self, callbacks: Optional[Iterable['cb.Callback']], epoch: int) -> None:
+    def run_callbacks(self, callbacks: Optional[Iterable[cb.Callback]], epoch: int) -> None:
         """Executes callbacks on points given an epoch number.
 
             Args:
@@ -318,7 +321,7 @@ class ColoredPointHandler:
             for callback in callbacks:
                 callback(epoch, self)
 
-    def simulate(self, epochs: int = 0, callbacks: Optional[Iterable['cb.Callback']] = None,
+    def simulate(self, epochs: int = 0, callbacks: Optional[Iterable[cb.Callback]] = None,
                  close_pool_on_end: bool = True) -> None:
         """Reproduces points, then kills competitors, then renders points, then runs callbacks,
             for a given number of epochs or until image is wholly colored.

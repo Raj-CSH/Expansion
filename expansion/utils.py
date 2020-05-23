@@ -3,6 +3,8 @@
     i.e. functions and classes that are not specific to the expansion package.
 """
 
+from __future__ import annotations
+
 __version__ = '1.0'
 __author__ = 'Rajarshi Mandal'
 __all__ = ['Timer',
