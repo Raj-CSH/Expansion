@@ -67,8 +67,9 @@ class Timer:
 
         return time_elapsed
 
-def stitch(directory: str, name: str, fps: int, dim: Tuple[int, int], f_format: str) -> None:
-    """Generates a video in '.avi' or '.mp4' format.
+def stitch(directory: str, name: str, fps: int, dim: Tuple[int, int], # pylint: disable=too-many-arguments
+           f_format: str, fourcc: str) -> None:
+    """Generates a video with a given fourcc
         Uses frames in a directory generated
         by the expansion.callbacks.Sample() callback
         used during ColoredPointHandler.simulate().
@@ -81,7 +82,13 @@ def stitch(directory: str, name: str, fps: int, dim: Tuple[int, int], f_format: 
             fps (int): Desired frame rate of the video.
             dim (tuple)(int): A tuple consisting of two integers,
                               representing the dimensions of each frame.
-            f_format (str): Desired file format of the video, either 'avi' or 'mp4'.
+            f_format (str): Desired file format of the video, e.g. 'mp4'.
+            fourcc (str): Desired fourcc of the video, e.g. 'h264'.
+                          You can visit https://www.fourcc.org/ for
+                          a detailed list of fourcc codes.
+                          Note: you must have the desired fourcc
+                          installed on your system to generate a video
+                          with that particular fourcc.
     """
     # pylint: disable=no-member
 
@@ -90,10 +97,8 @@ def stitch(directory: str, name: str, fps: int, dim: Tuple[int, int], f_format: 
         img = cv2.imread(f'{directory}/{i}.png')
         seq.append(img)
 
-    if 'avi' in f_format:
-        vid = cv2.VideoWriter(f'{directory}/{name}.avi', cv2.VideoWriter_fourcc(*'XVID'), fps, dim)
-    elif 'mp4' in f_format:
-        vid = cv2.VideoWriter(f'{directory}/{name}.mp4', cv2.VideoWriter_fourcc(*'mp4v'), fps, dim)
+    vid = cv2.VideoWriter(f'{directory}/{name}.{f_format}',
+                          cv2.VideoWriter_fourcc(*fourcc), fps, dim)
 
     for img in seq:
         vid.write(img)
