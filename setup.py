@@ -2,7 +2,7 @@
 
 import setuptools
 
-with open('README.md', 'r') as read_me:
+with open('README.rst', 'r') as read_me:
     README = read_me.read()
 
 setuptools.setup(
@@ -12,7 +12,7 @@ setuptools.setup(
     author_email='rajarshimandal22@gmail.com',
     description='A simple generative art project.',
     long_description=README,
-    long_description_content_type='text/markdown',
+    long_description_content_type='text/x-rst',
     url='https://github.com/Raj-CSH/expansion',
     packages=setuptools.find_packages(),
     classifiers=['Programming Language :: Python :: 3',
