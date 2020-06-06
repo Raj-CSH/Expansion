@@ -17,7 +17,8 @@ MacOS/Linux, or ``python -m`` on Windows. If that fails, try changing
 Examples
 ~~~~~~~~
 
-See the `examples <../../examples/>`__ directory to see some examples, as well
+See the `examples <https://github.com/Raj-CSH/expansion/tree/master/examples>`__
+directory to see some examples, as well
 as an example script.
 
 Prerequisites

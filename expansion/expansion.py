@@ -45,7 +45,7 @@ class ColoredPoint:
         color_instruction (expansion.colors.ColorInstruction): Instance of a subclass of
             expansion.colors.ColorInstruction that defines methods to determine color of
             reproduced point.
-        environment_sensitive (bool): Boolean value, defaults to False, if True selects
+        environment_sensitive (bool): Boolean value. Defaults to False, if True selects
             :func:`_reproduce_environment_sensitive` function as reproduction method.
 
     Attributes:
@@ -63,7 +63,7 @@ class ColoredPoint:
     """
     __slots__ = ['_length', '_color_instruction', '_environment_sensitive', '_coords', '_rgb']
 
-    def __init__(self, length, coords, rgb, color_instruction, environment_sensitive): # pylint: disable=too-many-arguments
+    def __init__(self, length, coords, rgb, color_instruction, environment_sensitive=False): # pylint: disable=too-many-arguments
 
         self._length = length
         self._color_instruction = color_instruction

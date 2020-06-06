@@ -1,11 +1,11 @@
 Expansion
 =========
 
-.. image:: examples/500x500_single_point_full.png
+.. image:: https://raw.githubusercontent.com/Raj-CSH/expansion/master/examples/500x500_single_point_full.png
    :width: 500
    :alt: Full Example 1
 
-.. image:: examples/500x500_random_single_point_full.png
+.. image:: https://raw.githubusercontent.com/Raj-CSH/expansion/master/examples/500x500_random_single_point_full.png
    :width: 500
    :alt: Full Example 2
 
@@ -31,8 +31,8 @@ for this repository.
 Examples
 ~~~~~~~~
 
-See the `examples <examples/>`__ directory to see some examples, as well
-as an example script.
+See the `examples <https://github.com/Raj-CSH/expansion/tree/master/examples/>`__ directory
+to see some examples, as well as an example script.
 
 Prerequisites
 ~~~~~~~~~~~~~
@@ -150,5 +150,5 @@ Acknowledgments
 -  Inspired by the
    `r/generative <https://www.reddit.com/r/generative/>`__ subreddit.
 
-.. |Full Example| image:: examples/500x500_single_point_full.png
-.. |Full Example 2| image:: examples/500x500_random_single_point_full.png
+.. |Full Example| image:: https://raw.githubusercontent.com/Raj-CSH/expansion/master/examples/500x500_single_point_full.png
+.. |Full Example 2| image:: https://raw.githubusercontent.com/Raj-CSH/expansion/master/examples/500x500_random_single_point_full.png
