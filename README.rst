@@ -25,7 +25,7 @@ MacOS/Linux, or ``python -m`` on Windows. If that fails, try changing
 Docs
 ~~~~
 
-Documentation can be found at the `Github Pages <raj-csh.github.io/expansion>`__
+Documentation can be found at the `Github Pages <https://raj-csh.github.io/expansion>`__
 for this repository.
 
 Examples
