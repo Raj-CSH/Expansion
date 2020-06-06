@@ -1,14 +1,6 @@
 Expansion
 =========
 
-.. image:: examples/500x500_single_point_full.png
-   :width: 500
-   :alt: Full Example 1
-
-.. image:: examples/500x500_random_single_point_full.png
-   :width: 500
-   :alt: Full Example 2
-
 What started out as a simple generative art project and experiment,
 built off of numpy, has now become an API, specifically pertaining to a
 point(s) reproducing in an image, with changing colors, and even
@@ -20,12 +12,12 @@ Quick start
 Use the command ``$ pip install expansion-raj-csh`` to install. If this
 fails, you might have to prefix the command with ``python3 -m`` on
 MacOS/Linux, or ``python -m`` on Windows. If that fails, try changing
-``pip`` to ``pip3``, or use the ``--user`` argument just before ``expansion_raj_csh``.
+``pip`` to ``pip3``, or use the ``--user`` argument just before ``-r``.
 
 Examples
 ~~~~~~~~
 
-See the `examples <examples/>`__ directory to see some examples, as well
+See the `examples <../../examples/>`__ directory to see some examples, as well
 as an example script.
 
 Prerequisites
@@ -136,13 +128,10 @@ License
 -------
 
 This project is licensed under the MIT License - see the
-`LICENSE <LICENSE>`__ file for details.
+`LICENSE <../../LICENSE>`__ file for details.
 
 Acknowledgments
 ---------------
 
 -  Inspired by the
    `r/generative <https://www.reddit.com/r/generative/>`__ subreddit.
-
-.. |Full Example| image:: examples/500x500_single_point_full.png
-.. |Full Example 2| image:: examples/500x500_random_single_point_full.png

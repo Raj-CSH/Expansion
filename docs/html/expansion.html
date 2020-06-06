@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Expansion &#8212; Expansion 1.0.2 documentation</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/foundation-sites/default.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/foundation-sphinx.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/what-input/what-input.min.js"></script>
+    <script src="_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API" href="api.html" />
+    <link rel="prev" title="Welcome to Expansion’s documentation!" href="index.html" /> 
+  </head><body>
+
+
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="menu sphinx-top-bar" data-responsive-menu="drilldown medium-dropdown">
+      <li class="menu-text"><a href="index.html">Expansion</a></li>
+      <li class="menu-text"></li>
+      <li>
+        <a role="button"
+           id="dTopbarSiteToc"
+           data-toggle="dropdown"
+           data-target="#"
+           href="index.html">&nbsp; Site</b></a>
+        <ul class="vertical"
+            role="menu"
+            aria-labelledby="dTopbarSiteToc"><p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Expansion</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#quick-start">Quick start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-from-source">Installing from source</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#author">Author</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#license">License</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#acknowledgments">Acknowledgments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-expansion">expansion module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-expansion.expansion">expansion.expansion module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-expansion.callbacks">expansion.callbacks module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-expansion.colors">expansion.colors module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-expansion.utils">expansion.utils module</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+      </li>
+      <li>
+        <a role="button"
+           id="dTopbarPageToc"
+           data-toggle="dropdown"
+           data-target="#"
+           href="#">&nbsp; Page</a>
+        <ul class="vertical"
+            role="menu"
+            aria-labelledby="dTopbarPageToc"><ul>
+<li><a class="reference internal" href="#">Expansion</a><ul>
+<li><a class="reference internal" href="#quick-start">Quick start</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#installing-from-source">Installing from source</a><ul>
+<li><a class="reference internal" href="#author">Author</a></li>
+<li><a class="reference internal" href="#license">License</a></li>
+<li><a class="reference internal" href="#acknowledgments">Acknowledgments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+      </li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu sphinx-top-bar" data-responsive-menu="drilldown medium-dropdown">
+        <li class="pagination-previous">
+          <a href="index.html" title="Previous Topic: Welcome to Expansion’s documentation!">
+            <span class="show-for-large">Welcome to Ex...</span>
+          </a>
+        </li>
+        <li class="pagination-next">
+          <a href="api.html" title="Next Topic: API">
+            <span class="show-for-large">API</span>
+          </a>
+        </li>
+        <li><form action="search.html" method="get">
+          <input type="text" name="q" class="form-control" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form></li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+  <div class="sticky" data-sticky data-margin-top="0">
+  <h3>Page Contents</h3>
+  <ul>
+<li><a class="reference internal" href="#">Expansion</a><ul>
+<li><a class="reference internal" href="#quick-start">Quick start</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#installing-from-source">Installing from source</a><ul>
+<li><a class="reference internal" href="#author">Author</a></li>
+<li><a class="reference internal" href="#license">License</a></li>
+<li><a class="reference internal" href="#acknowledgments">Acknowledgments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to Expansion’s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api.html"
+                        title="next chapter">API</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/expansion.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+  </div>
+  </div>
+    <div id="content" class="small-8 large-9 columns">
+      
+  <div class="section" id="expansion">
+<h1>Expansion<a class="headerlink" href="#expansion" title="Permalink to this headline">¶</a></h1>
+<p>What started out as a simple generative art project and experiment,
+built off of numpy, has now become an API, specifically pertaining to a
+point(s) reproducing in an image, with changing colors, and even
+environment-sensitive reproduction, with obstacles.</p>
+<div class="section" id="quick-start">
+<h2>Quick start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h2>
+<p>Use the command <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">expansion-raj-csh</span></code> to install. If this
+fails, you might have to prefix the command with <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span></code> on
+MacOS/Linux, or <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span></code> on Windows. If that fails, try changing
+<code class="docutils literal notranslate"><span class="pre">pip</span></code> to <code class="docutils literal notranslate"><span class="pre">pip3</span></code>, or use the <code class="docutils literal notranslate"><span class="pre">--user</span></code> argument just before <code class="docutils literal notranslate"><span class="pre">-r</span></code>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>See the <a class="reference external" href="../../examples/">examples</a> directory to see some examples, as well
+as an example script.</p>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>It is recommended to create a virtual environment before installing, to
+ensure that there are no conflicts with the system-wide python
+installation, or if administrator permissions are unavailable. This can
+be done with the <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">&lt;ENVIRONMENT_NAME&gt;</span></code> or
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">&lt;ENVIRONMENT_NAME&gt;</span></code>commands, depending on the OS,
+where <code class="docutils literal notranslate"><span class="pre">&lt;ENVIRONMENT_NAME&gt;</span></code> is the name of the virtual environment.
+This can be activated with the
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">source</span> <span class="pre">&lt;ENVIRONMENT_NAME&gt;/bin/activate</span></code> command on Unix, or the
+<code class="docutils literal notranslate"><span class="pre">&lt;ENVIRONMENT_NAME&gt;\Scripts\activate.bat</span></code> command on Windows.</p>
+</div>
+<div class="section" id="installing-from-source">
+<h2>Installing from source<a class="headerlink" href="#installing-from-source" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Ensure that you have Python 3 installed on your system.</p></li>
+</ol>
+<p>You can test this by running <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">python3</span> <span class="pre">--version</span></code> on the command
+line. If this fails, try running <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">python</span> <span class="pre">--version</span></code> and seeing if
+you get a version number that begins with a 3, e.g. <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.8.2</span></code>.</p>
+<p>If that fails, it most likely means that Python 3 is not installed on
+your system.</p>
+<p>To install Python 3, go to the Downloads page of the
+<a class="reference external" href="https://www.python.org/downloads/">Python</a> website, and make sure
+you install Python 3.</p>
+<ol class="arabic simple" start="2">
+<li><p>Check that pip is installed.</p></li>
+</ol>
+<p>You can test this by running <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">--version</span></code> on the command line. If
+this fails, you might have to prefix the command with <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span></code> on
+MacOS/Linux, or <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span></code> on Windows. If that fails, try changing
+<code class="docutils literal notranslate"><span class="pre">pip</span></code> to <code class="docutils literal notranslate"><span class="pre">pip3</span></code>.</p>
+<p>If that fails, it most likely means that pip is not installed on your
+system.</p>
+<p>To install pip, follow the guide on the <a class="reference external" href="https://pip.pypa.io/en/stable/installing/">Python Packaging Authority
+(PyPA)</a> website.</p>
+<ol class="arabic simple" start="3">
+<li><p>Clone the git repository.</p></li>
+</ol>
+<p>This can be done via the
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/Raj-CSH/Expansion.git</span></code> command, if git
+is installed on your system. This can be checked via the
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">--version</span></code> command.</p>
+<p>If that fails, it most likely means git is not installed on your system.</p>
+<p>To install git, follow the guide on the
+<a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git</a>
+website.</p>
+<ol class="arabic simple" start="4">
+<li><p>Install pipenv.</p></li>
+</ol>
+<p>Run the command <cite>$ pip install pipenv</cite> to install pipenv If this fails,
+you might have to prefix the command with <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span></code> on MacOS/Linux,
+or <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span></code> on Windows. If that fails, try changing <code class="docutils literal notranslate"><span class="pre">pip</span></code> to <code class="docutils literal notranslate"><span class="pre">pip3</span></code>.</p>
+<p>If you’re still having problems, consult the official
+<a class="reference external" href="https://pip.pypa.io/en/stable/installing/">Python Packaging Authority (PyPA)</a> website.</p>
+<ol class="arabic simple" start="5">
+<li><p>Install dependencies.</p></li>
+</ol>
+<p>Move into the directory of the cloned git repository via the <cite>$ cd Expansion</cite> command.
+Install the dependencies via the <cite>$ pipenv install</cite> command. If this fails,
+you might have to prefix the command with <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span></code> on MacOS/Linux,
+or <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span></code> on Windows.</p>
+<ol class="arabic simple" start="6">
+<li><p>Activate the virtual environment.</p></li>
+</ol>
+<p>Activate the virtual environment via the <cite>$ pipenv shell</cite> command. If this fails,
+you might have to prefix the command with <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span></code> on MacOS/Linux,
+or <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span></code> on Windows. To deactivate the virtual environment once you’re done,
+run the <cite>$ exit</cite> command.</p>
+<ol class="arabic simple" start="7">
+<li><p>Update setuptools.</p></li>
+</ol>
+<p>Run the command <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">setuptools</span></code> to update setuptools.</p>
+<ol class="arabic simple" start="7">
+<li><p>Build via setuptools.</p></li>
+</ol>
+<p>In the same directory as <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>, run the
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">python3</span> <span class="pre">setup.py</span> <span class="pre">sdist</span> <span class="pre">bdist_wheel</span></code> or the
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">sdist</span> <span class="pre">bdist_wheel</span></code> commands, depending on your OS.
+This will generate a ‘dist’ folder, containing the ‘.whl’ file that can
+be installed via pip.</p>
+<ol class="arabic simple" start="8">
+<li><p>Install the wheel.</p></li>
+</ol>
+<p>Navigate into the dist folder via the command <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">dist</span></code>. Then run
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">expansion_raj_csh-&lt;VERSION_NUMBER&gt;-py3-none-any.whl</span></code>,
+where <code class="docutils literal notranslate"><span class="pre">&lt;VERSION_NUMBER&gt;</span></code> is the version of the expansion package. This
+can be checked by looking at the version number in the filename of the
+wheel.</p>
+<div class="section" id="author">
+<h3>Author<a class="headerlink" href="#author" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Rajarshi Mandal</strong> - <a class="reference external" href="https://github.com/Raj-CSH">Raj-CSH</a></p></li>
+</ul>
+</div>
+<div class="section" id="license">
+<h3>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h3>
+<p>This project is licensed under the MIT License - see the
+<a class="reference external" href="../../LICENSE">LICENSE</a> file for details.</p>
+</div>
+<div class="section" id="acknowledgments">
+<h3>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Inspired by the
+<a class="reference external" href="https://www.reddit.com/r/generative/">r/generative</a> subreddit.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+    </div>
+</div></br>
+<div class="row">
+  <div class="small-8 large-9 columns">
+    <nav class="related" role="navigation" aria-label="related navigation">
+      <ul class="breadcrumbs">
+        <li class="nav-item nav-item-0"><a href="index.html">Expansion 1.0.2 documentation</a></li> 
+      </ul>
+    </nav>
+  </div>
+  <div class="small-4 large-3 columns">
+    <ul class="pagination" role="navigation" aria-label="Pagination">
+      <li style="margin-right: 10px">
+        <a href="genindex.html" title="General Index"
+           accesskey="I">index</a>
+        </li>
+      <li >
+        <a href="py-modindex.html" title="Python Module Index"
+           >modules</a>
+        </li><li aria-hidden="true"> |</li>
+      <li >
+        <a href="api.html" title="API"
+           accesskey="N">next</a>
+        </li><li aria-hidden="true"> |</li>
+      <li >
+        <a href="index.html" title="Welcome to Expansion’s documentation!"
+           accesskey="P">previous</a>
+        </li>
+    </ul>
+  </div>
+</div>
+<div class="top-bar row column">
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Rajarshi Mandal.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.4.
+    </div>
+</div>
+    <script> $(document).foundation() </script>
+  </body>
+</html>

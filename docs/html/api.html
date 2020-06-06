@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>API &#8212; Expansion 1.0.2 documentation</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/foundation-sites/default.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/foundation-sphinx.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/what-input/what-input.min.js"></script>
+    <script src="_static/foundation-sites/foundation.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Expansion" href="expansion.html" /> 
+  </head><body>
+
+
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="menu sphinx-top-bar" data-responsive-menu="drilldown medium-dropdown">
+      <li class="menu-text"><a href="index.html">Expansion</a></li>
+      <li class="menu-text"></li>
+      <li>
+        <a role="button"
+           id="dTopbarSiteToc"
+           data-toggle="dropdown"
+           data-target="#"
+           href="index.html">&nbsp; Site</b></a>
+        <ul class="vertical"
+            role="menu"
+            aria-labelledby="dTopbarSiteToc"><p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="expansion.html">Expansion</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="expansion.html#quick-start">Quick start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expansion.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expansion.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expansion.html#installing-from-source">Installing from source</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="expansion.html#author">Author</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expansion.html#license">License</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expansion.html#acknowledgments">Acknowledgments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-expansion">expansion module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-expansion.expansion">expansion.expansion module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-expansion.callbacks">expansion.callbacks module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-expansion.colors">expansion.colors module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-expansion.utils">expansion.utils module</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+      </li>
+      <li>
+        <a role="button"
+           id="dTopbarPageToc"
+           data-toggle="dropdown"
+           data-target="#"
+           href="#">&nbsp; Page</a>
+        <ul class="vertical"
+            role="menu"
+            aria-labelledby="dTopbarPageToc"><ul>
+<li><a class="reference internal" href="#">API</a><ul>
+<li><a class="reference internal" href="#module-expansion">expansion module</a></li>
+<li><a class="reference internal" href="#module-expansion.expansion">expansion.expansion module</a></li>
+<li><a class="reference internal" href="#module-expansion.callbacks">expansion.callbacks module</a></li>
+<li><a class="reference internal" href="#module-expansion.colors">expansion.colors module</a></li>
+<li><a class="reference internal" href="#module-expansion.utils">expansion.utils module</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+      </li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu sphinx-top-bar" data-responsive-menu="drilldown medium-dropdown">
+        <li class="pagination-previous">
+          <a href="expansion.html" title="Previous Topic: Expansion">
+            <span class="show-for-large">Expansion</span>
+          </a>
+        </li>
+        <li><form action="search.html" method="get">
+          <input type="text" name="q" class="form-control" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form></li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
+  <div class="sticky" data-sticky data-margin-top="0">
+  <h3>Page Contents</h3>
+  <ul>
+<li><a class="reference internal" href="#">API</a><ul>
+<li><a class="reference internal" href="#module-expansion">expansion module</a></li>
+<li><a class="reference internal" href="#module-expansion.expansion">expansion.expansion module</a></li>
+<li><a class="reference internal" href="#module-expansion.callbacks">expansion.callbacks module</a></li>
+<li><a class="reference internal" href="#module-expansion.colors">expansion.colors module</a></li>
+<li><a class="reference internal" href="#module-expansion.utils">expansion.utils module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="expansion.html"
+                        title="previous chapter">Expansion</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/api.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+  </div>
+  </div>
+    <div id="content" class="small-8 large-9 columns">
+      
+  <div class="section" id="api">
+<h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-expansion">
+<span id="expansion-module"></span><h2>expansion module<a class="headerlink" href="#module-expansion" title="Permalink to this headline">¶</a></h2>
+<p>This is the Expansion API, a generative art package with high levels of abstraction,
+specifically pertaining to a point(s) reproducing in an image, with changing colors, and even
+environment-sensitive reproduction, with obstacles.</p>
+<dl class="py class">
+<dt id="expansion.ColoredPoint">
+<em class="property">class </em><code class="sig-prename descclassname">expansion.</code><code class="sig-name descname">ColoredPoint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">length</span></em>, <em class="sig-param"><span class="n">coords</span></em>, <em class="sig-param"><span class="n">rgb</span></em>, <em class="sig-param"><span class="n">color_instruction</span></em>, <em class="sig-param"><span class="n">environment_sensitive</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.ColoredPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Reproductive point which stores its position and color. All attributes are read-only. Object
+instances do not define a __dict__, due to the use of __slots__ for decreased size and
+increased speed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>length</strong> (<em>int</em>) – Side length of square numpy array of which this point belongs to.</p></li>
+<li><p><strong>coords</strong> (<em>tuple</em><em>(</em><em>int</em><em>)</em>) – A tuple of integers, consisting of x, y coordinates in the
+range(0, length).</p></li>
+<li><p><strong>rgb</strong> (<em>tuple</em><em>(</em><em>float</em><em>)</em>) – A tuple of 3 floats scaled between 0 and 1 to represent the RGB color
+value of the point.</p></li>
+<li><p><strong>color_instruction</strong> (<a class="reference internal" href="#expansion.colors.ColorInstruction" title="expansion.colors.ColorInstruction"><em>expansion.colors.ColorInstruction</em></a>) – Instance of a subclass of
+expansion.colors.ColorInstruction that defines methods to determine color of
+reproduced point.</p></li>
+<li><p><strong>environment_sensitive</strong> (<em>bool</em>) – Boolean value, defaults to False, if True selects
+<code class="xref py py-func docutils literal notranslate"><span class="pre">_reproduce_environment_sensitive()</span></code> function as reproduction method.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="expansion.ColoredPoint.length">
+<code class="sig-name descname">length</code><a class="headerlink" href="#expansion.ColoredPoint.length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Side length of square numpy array of which this point belongs to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="expansion.ColoredPoint.color_instruction">
+<code class="sig-name descname">color_instruction</code><a class="headerlink" href="#expansion.ColoredPoint.color_instruction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instance of a subclass of
+expansion.colors.ColorInstruction that defines methods to determine color of
+reproduced point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#expansion.colors.ColorInstruction" title="expansion.colors.ColorInstruction">expansion.colors.ColorInstruction</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="expansion.ColoredPoint.environment_sensitive">
+<code class="sig-name descname">environment_sensitive</code><a class="headerlink" href="#expansion.ColoredPoint.environment_sensitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Boolean value, if True selects
+<code class="xref py py-func docutils literal notranslate"><span class="pre">_reproduce_environment_sensitive()</span></code> function as reproduction method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="expansion.ColoredPoint.x">
+<code class="sig-name descname">x</code><a class="headerlink" href="#expansion.ColoredPoint.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>X coordinate of point in range(0, <a class="reference internal" href="#id4" title="expansion.ColoredPoint.length"><code class="xref py py-attr docutils literal notranslate"><span class="pre">expansion.ColoredPoint.length</span></code></a>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="expansion.ColoredPoint.y">
+<code class="sig-name descname">y</code><a class="headerlink" href="#expansion.ColoredPoint.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Y coordinate of point in range(0, <a class="reference internal" href="#id4" title="expansion.ColoredPoint.length"><code class="xref py py-attr docutils literal notranslate"><span class="pre">expansion.ColoredPoint.length</span></code></a>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="expansion.ColoredPoint.r">
+<code class="sig-name descname">r</code><a class="headerlink" href="#expansion.ColoredPoint.r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Red channel (RGB) of color of point scaled between 0 and 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="expansion.ColoredPoint.g">
+<code class="sig-name descname">g</code><a class="headerlink" href="#expansion.ColoredPoint.g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Green channel (RGB) of color of point scaled between 0 and 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="expansion.ColoredPoint.b">
+<code class="sig-name descname">b</code><a class="headerlink" href="#expansion.ColoredPoint.b" title="Permalink to this definition">¶</a></dt>
+<dd><p>Blue channel (RGB) of color of point scaled between 0 and 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="id0">
+<em class="property">property </em><code class="sig-name descname">b</code><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Blue channel (RGB) of color of point scaled between 0 and 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="id1">
+<em class="property">property </em><code class="sig-name descname">color_instruction</code><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Color instruction of point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#expansion.colors.ColorInstruction" title="expansion.colors.ColorInstruction">expansion.colors.ColorInstruction</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="id2">
+<em class="property">property </em><code class="sig-name descname">environment_sensitive</code><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects reproduction method for point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="id3">
+<em class="property">property </em><code class="sig-name descname">g</code><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Green channel (RGB) of color of point scaled between 0 and 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="id4">
+<em class="property">property </em><code class="sig-name descname">length</code><a class="headerlink" href="#id4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Side length of square numpy array of which this point belongs to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="id5">
+<em class="property">property </em><code class="sig-name descname">r</code><a class="headerlink" href="#id5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Red channel (RGB) of color of point scaled between 0 and 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="expansion.ColoredPoint.render">
+<code class="sig-name descname">render</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arr</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.ColoredPoint.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws point to specified array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>arr</strong> (<em>numpy.ndarray</em>) – An image, in the form of a numpy array with 3 ndimensions, and
+float values scaled between 0 and 1.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The initial array with the point now drawn onto it.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="expansion.ColoredPoint.reproduce">
+<code class="sig-name descname">reproduce</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arr</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.ColoredPoint.reproduce" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reproduces point with altered color and position by generating new instances of
+ColoredPoint. Checks to see whether 4 immediate directions of point are within bounds,
+before changing color by a small increment and instantiating a new ColoredPoint. If
+<a class="reference internal" href="#id2" title="expansion.ColoredPoint.environment_sensitive"><code class="xref py py-attr docutils literal notranslate"><span class="pre">expansion.ColoredPoint.environment_sensitive</span></code></a> is enabled then will check if an
+obstacle is in the way, colored in white(RGB = [1.0, 1.0, 1.0]), before instantiating new
+ColoredPoints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>arr</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, optional) – An image, in the form of a numpy array with 3
+ndimensions, and float values scaled between 0 and 1. Defaults to None, for when
+environment_sensitive is False, however should be passed an array when
+environment_sensitive is True.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A list of the new ColoredPoint</dt><dd><p>instances that have met the criteria.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint">expansion.ColoredPoint</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="id6">
+<em class="property">property </em><code class="sig-name descname">x</code><a class="headerlink" href="#id6" title="Permalink to this definition">¶</a></dt>
+<dd><p>X coordinate of point in range(0, ColoredPoint.length).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="id7">
+<em class="property">property </em><code class="sig-name descname">y</code><a class="headerlink" href="#id7" title="Permalink to this definition">¶</a></dt>
+<dd><p>Y coordinate of point in range(0, ColoredPoint.length).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="expansion.ColoredPointHandler">
+<em class="property">class </em><code class="sig-prename descclassname">expansion.</code><code class="sig-name descname">ColoredPointHandler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">length</span></em>, <em class="sig-param"><span class="n">initial_points</span></em>, <em class="sig-param"><span class="n">initial_image</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.ColoredPointHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Handles and contains <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>length</strong> (<em>int</em>) – Side length of square numpy array, which handler renders to.</p></li>
+<li><p><strong>initial_points</strong> (<em>iterable</em><em>(</em><a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><em>expansion.ColoredPoint</em></a><em>)</em>) – Initial points for handler to use.</p></li>
+<li><p><strong>initial_image</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, optional) – Image, for handler to render to, in the
+form of a numpy with 3 ndimensions, and float values scaled between 0 and 1. If not
+provided, constructs numpy array of zeros from
+<a class="reference internal" href="#id10" title="expansion.ColoredPointHandler.length"><code class="xref py py-attr docutils literal notranslate"><span class="pre">expansion.ColoredPointHandler.length</span></code></a>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="expansion.ColoredPointHandler.length">
+<code class="sig-name descname">length</code><a class="headerlink" href="#expansion.ColoredPointHandler.length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Side length of square numpy array, which handler renders to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="expansion.ColoredPointHandler.arr">
+<code class="sig-name descname">arr</code><a class="headerlink" href="#expansion.ColoredPointHandler.arr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Image, for handler to render to, in the form of a numpy array with 3
+ndimensions, and float values scaled between 0 and 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="expansion.ColoredPointHandler.points">
+<code class="sig-name descname">points</code><a class="headerlink" href="#expansion.ColoredPointHandler.points" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of expansion.ColoredPoint objects for handler
+to use.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint">expansion.ColoredPoint</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="expansion.ColoredPointHandler.environment_sensitive">
+<code class="sig-name descname">environment_sensitive</code><a class="headerlink" href="#expansion.ColoredPointHandler.environment_sensitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Boolean value, if True selects
+<code class="xref py py-func docutils literal notranslate"><span class="pre">_reproduce_environment_sensitive()</span></code> function as reproduction method, obtained from
+first point in <a class="reference internal" href="#id11" title="expansion.ColoredPointHandler.points"><code class="xref py py-attr docutils literal notranslate"><span class="pre">expansion.ColoredPointHandler.points</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="id8">
+<em class="property">property </em><code class="sig-name descname">arr</code><a class="headerlink" href="#id8" title="Permalink to this definition">¶</a></dt>
+<dd><p>Image, for handler to render to, in the form of a numpy array with 3
+ndimensions, and float values scaled between 0 and 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If array given to setter is of a different shape to original array.</p>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="id9">
+<em class="property">property </em><code class="sig-name descname">environment_sensitive</code><a class="headerlink" href="#id9" title="Permalink to this definition">¶</a></dt>
+<dd><p>Boolean value to select <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> objects’ reproduction
+method.</p>
+<p>When setter is called, <a class="reference internal" href="#id2" title="expansion.ColoredPoint.environment_sensitive"><code class="xref py py-attr docutils literal notranslate"><span class="pre">expansion.ColoredPoint.environment_sensitive</span></code></a> will be changed
+for all <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> objects in
+<a class="reference internal" href="#id11" title="expansion.ColoredPointHandler.points"><code class="xref py py-attr docutils literal notranslate"><span class="pre">expansion.ColoredPointHandler.points</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="expansion.ColoredPointHandler.export_as_arr">
+<code class="sig-name descname">export_as_arr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#expansion.ColoredPointHandler.export_as_arr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports internal array as a numpy array with data-type as unsigned 8-bit integers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>Rendered RGB image in the form of a 3 ndimensional numpy array with a</dt><dd><p>data-type of numpy.uint8.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="expansion.ColoredPointHandler.export_as_img">
+<code class="sig-name descname">export_as_img</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#expansion.ColoredPointHandler.export_as_img" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports internal array as a RGB PIL image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Rendered image.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>PIL.Image.Image</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="expansion.ColoredPointHandler.kill_competitors">
+<code class="sig-name descname">kill_competitors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#expansion.ColoredPointHandler.kill_competitors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> objects, whose positions have already been
+occupied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>AssertionError</strong> – If ColoredHandler.points becomes greater than its allocated length
+    (= <code class="xref py py-attr docutils literal notranslate"><span class="pre">expansion.ColoredHandler.length</span></code> ** 2).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="id10">
+<em class="property">property </em><code class="sig-name descname">length</code><a class="headerlink" href="#id10" title="Permalink to this definition">¶</a></dt>
+<dd><p>Side length of square numpy array, which handler renders to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="id11">
+<em class="property">property </em><code class="sig-name descname">points</code><a class="headerlink" href="#id11" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of expansion.ColoredPoint objects for handler
+to use.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If list passed to setter is empty.</p>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>list(<a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint">expansion.ColoredPoint</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="expansion.ColoredPointHandler.render_points">
+<code class="sig-name descname">render_points</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#expansion.ColoredPointHandler.render_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renders <a class="reference internal" href="#id11" title="expansion.ColoredPointHandler.points"><code class="xref py py-attr docutils literal notranslate"><span class="pre">expansion.ColoredPointHandler.points</span></code></a> to internal array.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="expansion.ColoredPointHandler.reproduce_points">
+<code class="sig-name descname">reproduce_points</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#expansion.ColoredPointHandler.reproduce_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reproduces <a class="reference internal" href="#id11" title="expansion.ColoredPointHandler.points"><code class="xref py py-attr docutils literal notranslate"><span class="pre">expansion.ColoredPointHandler.points</span></code></a> and updates internal list.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="expansion.ColoredPointHandler.run_callbacks">
+<code class="sig-name descname">run_callbacks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">epoch</span></em>, <em class="sig-param"><span class="n">callbacks</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.ColoredPointHandler.run_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes callbacks on points given an epoch number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>epoch</strong> (<em>int</em>) – Epoch number to pass to callbacks.</p></li>
+<li><p><strong>callbacks</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">iterable(expansion.callbacks.Callbacks)</span></code>, optional) – <a class="reference internal" href="#expansion.callbacks.Callback" title="expansion.callbacks.Callback"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.callbacks.Callback</span></code></a> objects to execute. Defaults to no callbacks.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="expansion.ColoredPointHandler.simulate">
+<code class="sig-name descname">simulate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">epochs</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">callbacks</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">close_pool_on_end</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.ColoredPointHandler.simulate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes <a class="reference internal" href="#expansion.ColoredPointHandler.reproduce_points" title="expansion.ColoredPointHandler.reproduce_points"><code class="xref py py-meth docutils literal notranslate"><span class="pre">expansion.ColoredPointHandler.reproduce_points()</span></code></a>,
+<a class="reference internal" href="#expansion.ColoredPointHandler.kill_competitors" title="expansion.ColoredPointHandler.kill_competitors"><code class="xref py py-meth docutils literal notranslate"><span class="pre">expansion.ColoredPointHandler.kill_competitors()</span></code></a>,
+<a class="reference internal" href="#expansion.ColoredPointHandler.render_points" title="expansion.ColoredPointHandler.render_points"><code class="xref py py-meth docutils literal notranslate"><span class="pre">expansion.ColoredPointHandler.render_points()</span></code></a>,
+<a class="reference internal" href="#expansion.ColoredPointHandler.run_callbacks" title="expansion.ColoredPointHandler.run_callbacks"><code class="xref py py-meth docutils literal notranslate"><span class="pre">expansion.ColoredPointHandler.run_callbacks()</span></code></a> in that order for a given number of
+epochs or until image is wholly colored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>epochs</strong> (<em>int</em>) – Number of epochs to simulate, if 0 will simulate until image is wholly
+colored. Defaults to 0.</p></li>
+<li><p><strong>callbacks</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">iterable(expansion.callbacks.Callback)</span></code>, optional) – Callbacks to run
+once <a class="reference internal" href="#id11" title="expansion.ColoredPointHandler.points"><code class="xref py py-attr docutils literal notranslate"><span class="pre">expansion.ColoredPointHandler.points</span></code></a> have been reproduced, duplicates
+deleted, and array updated. Defaults to no callbacks.</p></li>
+<li><p><strong>close_pool_on_end</strong> (<em>bool</em>) – Whether to close multiprocessing.pool.Pool once function has
+terminated or leave it running. Defaults to True.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="expansion.is_multiprocessing">
+<code class="sig-prename descclassname">expansion.</code><code class="sig-name descname">is_multiprocessing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#expansion.is_multiprocessing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if multiprocessing is enabled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Whether multiprocessing is enabled.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="expansion.disable_multiprocessing">
+<code class="sig-prename descclassname">expansion.</code><code class="sig-name descname">disable_multiprocessing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#expansion.disable_multiprocessing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disables multiprocessing.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="expansion.enable_multiprocessing">
+<code class="sig-prename descclassname">expansion.</code><code class="sig-name descname">enable_multiprocessing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cores_to_use</span><span class="o">=</span><span class="default_value">4</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.enable_multiprocessing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables multiprocessing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cores_to_use</strong> (<em>int</em>) – Number of cores to utilise. Defaults to all cores,
+value obtained by os.cpu_count().</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="expansion.core_count">
+<code class="sig-prename descclassname">expansion.</code><code class="sig-name descname">core_count</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#expansion.core_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the number of cores utilised by multiprocessing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Number of cores utilised by multiprocessing.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-expansion.expansion">
+<span id="expansion-expansion-module"></span><h2>expansion.expansion module<a class="headerlink" href="#module-expansion.expansion" title="Permalink to this headline">¶</a></h2>
+<p>This is the main module in the expansion package. Contains the main classes and functions to be
+used when importing the expansion package. Members can be imported as expansion.name rather than
+expansion.expansion.name.</p>
+<dl class="py data">
+<dt id="expansion.expansion._M">
+<code class="sig-prename descclassname">expansion.expansion.</code><code class="sig-name descname">_M</code><em class="property"> = [False, None, 1]</em><a class="headerlink" href="#expansion.expansion._M" title="Permalink to this definition">¶</a></dt>
+<dd><p>These are mutable flags to be passed between script and module. Not meant to be accessed
+directly, but rather through wrapper functions, such as <a class="reference internal" href="#expansion.enable_multiprocessing" title="expansion.enable_multiprocessing"><code class="xref py py-func docutils literal notranslate"><span class="pre">expansion.enable_multiprocessing()</span></code></a>
+or <a class="reference internal" href="#expansion.is_multiprocessing" title="expansion.is_multiprocessing"><code class="xref py py-func docutils literal notranslate"><span class="pre">expansion.is_multiprocessing()</span></code></a>.</p>
+<p class="rubric">Notes</p>
+<p>_M[0] = multiprocessing
+_M[1] = pool
+_M[2] = core_count</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="expansion.expansion._reproduce_environment_sensitive">
+<code class="sig-prename descclassname">expansion.expansion.</code><code class="sig-name descname">_reproduce_environment_sensitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em>, <em class="sig-param"><span class="n">arr</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.expansion._reproduce_environment_sensitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reproduces <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> with altered color and position by instantiating
+new ColoredPoint objects. Checks to see whether 4 immediate directions of point are within
+bounds, and will then check if an obstacle is in the way, colored in white(RGB=[1.0, 1.0, 1.0]),
+before changing color by a  small increment and instantiating a new ColoredPoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point</strong> (<a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><em>expansion.ColoredPoint</em></a>) – <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> to reproduce.</p></li>
+<li><p><strong>arr</strong> (<em>numpy.ndarray</em>) – An image, in the form of a numpy array with 3 ndimensions, and float
+values scaled between 0 and 1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A list of the new <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> objects</dt><dd><p>that have met the criteria.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint">expansion.ColoredPoint</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="expansion.expansion._reproduce_environment_insensitive">
+<code class="sig-prename descclassname">expansion.expansion.</code><code class="sig-name descname">_reproduce_environment_insensitive</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.expansion._reproduce_environment_insensitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reproduces <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> with altered color and position by instantiating
+new ColoredPoint objects. Checks to see whether 4 immediate directions of point are within
+bounds, before changing color by a  small increment and instantiating a new ColoredPoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>point</strong> (<a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><em>expansion.ColoredPoint</em></a>) – <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> to reproduce.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A list of the new <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> objects</dt><dd><p>that have met the criteria.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list(<a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint">expansion.ColoredPoint</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-expansion.callbacks">
+<span id="expansion-callbacks-module"></span><h2>expansion.callbacks module<a class="headerlink" href="#module-expansion.callbacks" title="Permalink to this headline">¶</a></h2>
+<p>This is the callbacks module of the expansion package. Contains Callback abstract base class and
+predefined callback classes for use in expansion.ColoredPointHandler.simulate() or
+expansion.ColoredPointHandler.run_callbacks.</p>
+<dl class="py class">
+<dt id="expansion.callbacks.Callback">
+<em class="property">class </em><code class="sig-prename descclassname">expansion.callbacks.</code><code class="sig-name descname">Callback</code><a class="headerlink" href="#expansion.callbacks.Callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Abstract Base Class for all callbacks to derive from.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="expansion.callbacks.Sample">
+<em class="property">class </em><code class="sig-prename descclassname">expansion.callbacks.</code><code class="sig-name descname">Sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">directory</span></em>, <em class="sig-param"><span class="n">f_format</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.callbacks.Sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#expansion.callbacks.Callback" title="expansion.callbacks.Callback"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.callbacks.Callback</span></code></a></p>
+<p>Callback to save <a class="reference internal" href="#id8" title="expansion.ColoredPointHandler.arr"><code class="xref py py-attr docutils literal notranslate"><span class="pre">expansion.ColoredPointHandler.arr</span></code></a> as an image file Names each
+image as the current epoch number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>directory</strong> (<em>str</em>) – Directory in which to save the images.</p></li>
+<li><p><strong>f_format</strong> (<em>str</em>) – File format to save each image as,
+given as ‘png’ or ‘jpg’.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="expansion.callbacks.Print">
+<em class="property">class </em><code class="sig-prename descclassname">expansion.callbacks.</code><code class="sig-name descname">Print</code><a class="headerlink" href="#expansion.callbacks.Print" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#expansion.callbacks.Callback" title="expansion.callbacks.Callback"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.callbacks.Callback</span></code></a></p>
+<p>Callback to print the current epoch number and point count.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="expansion.callbacks.PygameGUI">
+<em class="property">class </em><code class="sig-prename descclassname">expansion.callbacks.</code><code class="sig-name descname">PygameGUI</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">length</span></em>, <em class="sig-param"><span class="n">dimensions</span></em>, <em class="sig-param"><span class="n">offset</span><span class="o">=</span><span class="default_value">0, 0</span></em>, <em class="sig-param"><span class="n">tick</span><span class="o">=</span><span class="default_value">60</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.callbacks.PygameGUI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#expansion.callbacks.Callback" title="expansion.callbacks.Callback"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.callbacks.Callback</span></code></a></p>
+<p>Callback to update a pygame GUI with <code class="xref py py-attr docutils literal notranslate"><span class="pre">expansion.ColoredPoint.arr</span></code> Instantiates a Pygame
+window and clock. Sets window title as ‘Expansion’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>length</strong> (<em>int</em>) – Side length of square <a class="reference internal" href="#id8" title="expansion.ColoredPointHandler.arr"><code class="xref py py-attr docutils literal notranslate"><span class="pre">expansion.ColoredPointHandler.arr</span></code></a>.</p></li>
+<li><p><strong>dimensions</strong> (<em>tuple</em><em>(</em><em>int</em><em>)</em>) – Dimensions of pygame window.</p></li>
+<li><p><strong>offset</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">tuple(int)</span></code>, optional) – Offset of <a class="reference internal" href="#id8" title="expansion.ColoredPointHandler.arr"><code class="xref py py-attr docutils literal notranslate"><span class="pre">expansion.ColoredPointHandler.arr</span></code></a>
+on pygame window, given as (x, y). Defaults to no offset (0, 0).</p></li>
+<li><p><strong>tick</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional) – Tick to be passed to pygame.time.Clock.tick.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="expansion.callbacks.callback_from_function">
+<code class="sig-prename descclassname">expansion.callbacks.</code><code class="sig-name descname">callback_from_function</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.callbacks.callback_from_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiates a callback object from a function. Factory function for
+<code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.callbacks._FunctionCallback</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> (<em>callable</em>) – Function to instantiate a callback from. Must have epoch and handler as
+keyword arguments, then keyword arguments that are fixed, before callback is called.</p></li>
+<li><p><strong>**kwargs</strong> – Fixed keyword arguments to be passed to function, when callback is called.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A <code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.callbacks._FunctionCallback</span></code></dt><dd><p>object</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>expansion.callbacks._FunctionCallback</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-expansion.colors">
+<span id="expansion-colors-module"></span><h2>expansion.colors module<a class="headerlink" href="#module-expansion.colors" title="Permalink to this headline">¶</a></h2>
+<p>This is the colors module of the expansion package. Contains ColorInstruction abstract base
+class and predefined color classes for use in <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a>.</p>
+<dl class="py class">
+<dt id="expansion.colors.ColorInstruction">
+<em class="property">class </em><code class="sig-prename descclassname">expansion.colors.</code><code class="sig-name descname">ColorInstruction</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.colors.ColorInstruction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Abstract Base Class for all color instructions to derive from.</p>
+<dl class="py method">
+<dt id="expansion.colors.ColorInstruction.x_decreasing">
+<em class="property">abstract </em><code class="sig-name descname">x_decreasing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.colors.ColorInstruction.x_decreasing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when coords_diff == (-1, 0), i.e. when x is decreasing, but y is constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>point</strong> (<a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><em>expansion.ColoredPoint</em></a>) – Parent <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> to calculate
+color from.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Color of child point.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="expansion.colors.ColorInstruction.x_increasing">
+<em class="property">abstract </em><code class="sig-name descname">x_increasing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.colors.ColorInstruction.x_increasing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when coords_diff == (1, 0), i.e. when x is increasing, but y is constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>point</strong> (<a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><em>expansion.ColoredPoint</em></a>) – Parent <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> to calculate
+color from.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Color of child point.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="expansion.colors.ColorInstruction.y_decreasing">
+<em class="property">abstract </em><code class="sig-name descname">y_decreasing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.colors.ColorInstruction.y_decreasing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when coords_diff == (0, -1), i.e. when y is decreasing, but x is constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>point</strong> (<a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><em>expansion.ColoredPoint</em></a>) – Parent <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> to calculate
+color from.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Color of child point.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="expansion.colors.ColorInstruction.y_increasing">
+<em class="property">abstract </em><code class="sig-name descname">y_increasing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.colors.ColorInstruction.y_increasing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when coords_diff == (0, 1), i.e. when y is increasing, but x is constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>point</strong> (<a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><em>expansion.ColoredPoint</em></a>) – Parent <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> to calculate
+color from.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Color of child point.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="expansion.colors.ColorA">
+<em class="property">class </em><code class="sig-prename descclassname">expansion.colors.</code><code class="sig-name descname">ColorA</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.colors.ColorA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#expansion.colors.ColorInstruction" title="expansion.colors.ColorInstruction"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.colors.ColorInstruction</span></code></a></p>
+<p>A builtin <a class="reference internal" href="#expansion.colors.ColorInstruction" title="expansion.colors.ColorInstruction"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.colors.ColorInstruction</span></code></a>, descriptively named ‘A’.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#expansion.colors.ColorB" title="expansion.colors.ColorB"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.colors.ColorB</span></code></a></p>
+</div>
+<dl class="py method">
+<dt id="expansion.colors.ColorA.x_decreasing">
+<code class="sig-name descname">x_decreasing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.colors.ColorA.x_decreasing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when coords_diff == (-1, 0), i.e. when x is decreasing, but y is constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>point</strong> (<a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><em>expansion.ColoredPoint</em></a>) – Parent <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> to calculate
+color from.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Color of child point.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="expansion.colors.ColorA.x_increasing">
+<code class="sig-name descname">x_increasing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.colors.ColorA.x_increasing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when coords_diff == (1, 0), i.e. when x is increasing, but y is constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>point</strong> (<a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><em>expansion.ColoredPoint</em></a>) – Parent <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> to calculate
+color from.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Color of child point.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="expansion.colors.ColorA.y_decreasing">
+<code class="sig-name descname">y_decreasing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.colors.ColorA.y_decreasing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when coords_diff == (0, -1), i.e. when y is decreasing, but x is constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>point</strong> (<a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><em>expansion.ColoredPoint</em></a>) – Parent <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> to calculate
+color from.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Color of child point.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="expansion.colors.ColorA.y_increasing">
+<code class="sig-name descname">y_increasing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.colors.ColorA.y_increasing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when coords_diff == (0, 1), i.e. when y is increasing, but x is constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>point</strong> (<a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><em>expansion.ColoredPoint</em></a>) – Parent <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> to calculate
+color from.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Color of child point.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="expansion.colors.ColorB">
+<em class="property">class </em><code class="sig-prename descclassname">expansion.colors.</code><code class="sig-name descname">ColorB</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.colors.ColorB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#expansion.colors.ColorInstruction" title="expansion.colors.ColorInstruction"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.colors.ColorInstruction</span></code></a></p>
+<p>A builtin <a class="reference internal" href="#expansion.colors.ColorInstruction" title="expansion.colors.ColorInstruction"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.colors.ColorInstruction</span></code></a>, descriptively named ‘B’.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#expansion.colors.ColorA" title="expansion.colors.ColorA"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.colors.ColorA</span></code></a></p>
+</div>
+<dl class="py method">
+<dt id="expansion.colors.ColorB.x_decreasing">
+<code class="sig-name descname">x_decreasing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.colors.ColorB.x_decreasing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when coords_diff == (-1, 0), i.e. when x is decreasing, but y is constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>point</strong> (<a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><em>expansion.ColoredPoint</em></a>) – Parent <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> to calculate
+color from.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Color of child point.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="expansion.colors.ColorB.x_increasing">
+<code class="sig-name descname">x_increasing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.colors.ColorB.x_increasing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when coords_diff == (1, 0), i.e. when x is increasing, but y is constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>point</strong> (<a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><em>expansion.ColoredPoint</em></a>) – Parent <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> to calculate
+color from.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Color of child point.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="expansion.colors.ColorB.y_decreasing">
+<code class="sig-name descname">y_decreasing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.colors.ColorB.y_decreasing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when coords_diff == (0, -1), i.e. when y is decreasing, but x is constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>point</strong> (<a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><em>expansion.ColoredPoint</em></a>) – Parent <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> to calculate
+color from.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Color of child point.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="expansion.colors.ColorB.y_increasing">
+<code class="sig-name descname">y_increasing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.colors.ColorB.y_increasing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when coords_diff == (0, 1), i.e. when y is increasing, but x is constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>point</strong> (<a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><em>expansion.ColoredPoint</em></a>) – Parent <a class="reference internal" href="#expansion.ColoredPoint" title="expansion.ColoredPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPoint</span></code></a> to calculate
+color from.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Color of child point.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-expansion.utils">
+<span id="expansion-utils-module"></span><h2>expansion.utils module<a class="headerlink" href="#module-expansion.utils" title="Permalink to this headline">¶</a></h2>
+<p>This is the utilities module of the expansion package. Contains miscellaneous utilities, i.e.
+functions and classes that are not specific to the expansion package.</p>
+<dl class="py class">
+<dt id="expansion.utils.Timer">
+<em class="property">class </em><code class="sig-prename descclassname">expansion.utils.</code><code class="sig-name descname">Timer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.utils.Timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Once instantiated, can be called to time a function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>func</strong> (<em>callable</em>) – Function to be timed.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="expansion.utils.Timer.func">
+<code class="sig-name descname">func</code><a class="headerlink" href="#expansion.utils.Timer.func" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to be timed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>callable</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="expansion.utils.Timer.result">
+<code class="sig-name descname">result</code><a class="headerlink" href="#expansion.utils.Timer.result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Result of function passed to timer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="id12">
+<em class="property">property </em><code class="sig-name descname">result</code><a class="headerlink" href="#id12" title="Permalink to this definition">¶</a></dt>
+<dd><p>Result of function passed to Timer, only accesible once Timer instance has been
+called.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>AttributeError</strong> – If accessed before Timer instance has been called.</p>
+</dd>
+<dt class="field-even">Type</dt>
+<dd class="field-even"><p>any</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="expansion.utils.stitch">
+<code class="sig-prename descclassname">expansion.utils.</code><code class="sig-name descname">stitch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">directory</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">fps</span></em>, <em class="sig-param"><span class="n">dim</span></em>, <em class="sig-param"><span class="n">f_format</span></em>, <em class="sig-param"><span class="n">fourcc</span></em>, <em class="sig-param"><span class="n">frame_ff</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.utils.stitch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a video with a given fourcc Uses frames in a directory generated by the
+<a class="reference internal" href="#expansion.callbacks.Sample" title="expansion.callbacks.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.callbacks.Sample</span></code></a> callback used during
+<a class="reference internal" href="#expansion.ColoredPointHandler.simulate" title="expansion.ColoredPointHandler.simulate"><code class="xref py py-class docutils literal notranslate"><span class="pre">expansion.ColoredPointHandler.simulate</span></code></a>. Frames must be numbered, e.g. ‘1.png’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>directory</strong> (<em>str</em>) – Directory of the frames.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Desired name of the video.</p></li>
+<li><p><strong>fps</strong> (<em>int</em>) – Desired frame rate of the video.</p></li>
+<li><p><strong>dim</strong> (<em>tuple</em><em>(</em><em>int</em><em>)</em>) – A tuple consisting of two integers, representing the dimensions of each
+frame.</p></li>
+<li><p><strong>f_format</strong> (<em>str</em>) – Desired file format of the video, e.g. ‘mp4’.</p></li>
+<li><p><strong>fourcc</strong> (<em>str</em>) – Desired fourcc of the video, e.g. ‘h264’.
+You can visit <a class="reference external" href="https://www.fourcc.org/">https://www.fourcc.org/</a> for a detailed list of fourcc codes. Note: you
+must have the desired fourcc installed on your system to generate a video with that
+particular fourcc.</p></li>
+<li><p><strong>frame_ff</strong> (<em>str</em>) – File format of frames, e.g. ‘png’.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+</div></br>
+<div class="row">
+  <div class="small-8 large-9 columns">
+    <nav class="related" role="navigation" aria-label="related navigation">
+      <ul class="breadcrumbs">
+        <li class="nav-item nav-item-0"><a href="index.html">Expansion 1.0.2 documentation</a></li> 
+      </ul>
+    </nav>
+  </div>
+  <div class="small-4 large-3 columns">
+    <ul class="pagination" role="navigation" aria-label="Pagination">
+      <li style="margin-right: 10px">
+        <a href="genindex.html" title="General Index"
+           accesskey="I">index</a>
+        </li>
+      <li >
+        <a href="py-modindex.html" title="Python Module Index"
+           >modules</a>
+        </li><li aria-hidden="true"> |</li>
+      <li >
+        <a href="expansion.html" title="Expansion"
+           accesskey="P">previous</a>
+        </li>
+    </ul>
+  </div>
+</div>
+<div class="top-bar row column">
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Rajarshi Mandal.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.4.
+    </div>
+</div>
+    <script> $(document).foundation() </script>
+  </body>
+</html>
