@@ -17,7 +17,8 @@ MacOS/Linux, or ``python -m`` on Windows. If that fails, try changing
 Examples
 ~~~~~~~~
 
-See the `examples <../../examples/>`__ directory to see some examples, as well
+See the `examples <https://github.com/Raj-CSH/expansion/tree/master/examples>`__
+directory to see some examples, as well
 as an example script.
 
 Prerequisites
@@ -128,7 +129,7 @@ License
 -------
 
 This project is licensed under the MIT License - see the
-`LICENSE <../../LICENSE>`__ file for details.
+`LICENSE <https://raw.githubusercontent.com/Raj-CSH/expansion/master/LICENSE>`__ file for details.
 
 Acknowledgments
 ---------------

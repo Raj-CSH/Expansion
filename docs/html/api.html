@@ -144,7 +144,7 @@ specifically pertaining to a point(s) reproducing in an image, with changing col
 environment-sensitive reproduction, with obstacles.</p>
 <dl class="py class">
 <dt id="expansion.ColoredPoint">
-<em class="property">class </em><code class="sig-prename descclassname">expansion.</code><code class="sig-name descname">ColoredPoint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">length</span></em>, <em class="sig-param"><span class="n">coords</span></em>, <em class="sig-param"><span class="n">rgb</span></em>, <em class="sig-param"><span class="n">color_instruction</span></em>, <em class="sig-param"><span class="n">environment_sensitive</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.ColoredPoint" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">expansion.</code><code class="sig-name descname">ColoredPoint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">length</span></em>, <em class="sig-param"><span class="n">coords</span></em>, <em class="sig-param"><span class="n">rgb</span></em>, <em class="sig-param"><span class="n">color_instruction</span></em>, <em class="sig-param"><span class="n">environment_sensitive</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#expansion.ColoredPoint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Reproductive point which stores its position and color. All attributes are read-only. Object
 instances do not define a __dict__, due to the use of __slots__ for decreased size and
@@ -160,7 +160,7 @@ value of the point.</p></li>
 <li><p><strong>color_instruction</strong> (<a class="reference internal" href="#expansion.colors.ColorInstruction" title="expansion.colors.ColorInstruction"><em>expansion.colors.ColorInstruction</em></a>) – Instance of a subclass of
 expansion.colors.ColorInstruction that defines methods to determine color of
 reproduced point.</p></li>
-<li><p><strong>environment_sensitive</strong> (<em>bool</em>) – Boolean value, defaults to False, if True selects
+<li><p><strong>environment_sensitive</strong> (<em>bool</em>) – Boolean value. Defaults to False, if True selects
 <code class="xref py py-func docutils literal notranslate"><span class="pre">_reproduce_environment_sensitive()</span></code> function as reproduction method.</p></li>
 </ul>
 </dd>
