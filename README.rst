@@ -22,6 +22,12 @@ fails, you might have to prefix the command with ``python3 -m`` on
 MacOS/Linux, or ``python -m`` on Windows. If that fails, try changing
 ``pip`` to ``pip3``, or use the ``--user`` argument just before ``expansion_raj_csh``.
 
+Docs
+~~~~
+
+Documentation can be found at the `Github Pages <raj-csh.github.io/expansion>`__
+for this repository.
+
 Examples
 ~~~~~~~~
 
