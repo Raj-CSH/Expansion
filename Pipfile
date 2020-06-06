@@ -1,0 +1,19 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pylint = "*"
+pytest = "*"
+sphinx = "*"
+sphinx-foundation-theme = "*"
+
+[packages]
+numpy = ">=1.17.3"
+opencv-python = "==4.2.0.34"
+pygame = "==2.0.0.dev8"
+Pillow = ">=7.1.2"
+
+[requires]
+python_version = "3.8"
