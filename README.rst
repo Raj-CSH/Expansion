@@ -23,9 +23,9 @@ MacOS/Linux, or ``python -m`` on Windows. If that fails, try changing
 ``pip`` to ``pip3``, or use the ``--user`` argument just before ``expansion_raj_csh``.
 
 Documentation
-~~~~
+~~~~~~~~~~~~~
 
-Documentation can be found at the `Github Pages <https://raj-csh.github.io/expansion>`__,
+Documentation can be found at the `GitHub Pages <https://raj-csh.github.io/expansion>`__,
 or the `Readthedocs page <https://expansion-raj-csh.readthedocs.io/en/latest/>`__ for this repository.
 
 Examples
