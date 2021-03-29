@@ -28,7 +28,7 @@ pluggy==0.13.1
 py==1.8.1
 pycparser==2.20
 pygame==2.0.0.dev8
-Pygments==2.6.1
+Pygments==2.7.4
 pylint==2.5.2
 pyparsing==2.4.7
 pytest==5.4.3
