@@ -25,7 +25,7 @@ packaging==20.4
 Pillow==7.1.2
 pkginfo==1.5.0.1
 pluggy==0.13.1
-py==1.8.1
+py==1.10.0
 pycparser==2.20
 pygame==2.0.0.dev8
 Pygments==2.6.1
